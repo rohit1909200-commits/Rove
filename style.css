@@ -1,0 +1,107 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  height: 100vh;
+  background: radial-gradient(circle at top, #111, #000);
+  color: white;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.screen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden { display: none; }
+
+/* Card UI */
+.card {
+  width: min(500px, 92vw);
+  padding: 45px 35px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(12px);
+  text-align: center;
+  box-shadow: 0 0 40px rgba(0,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.title {
+  font-family: "Orbitron", sans-serif;
+  font-size: 64px;
+  letter-spacing: 6px;
+  color: #00f5ff;
+  text-shadow: 0 0 22px rgba(0,245,255,0.85);
+  margin-bottom: 18px;
+}
+
+.desc {
+  opacity: 0.85;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.small {
+  margin-top: 18px;
+  opacity: 0.65;
+  font-size: 12px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  border-radius: 40px;
+  padding: 14px 40px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  background: linear-gradient(135deg, #00f5ff, #0066ff);
+  color: #000;
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 26px rgba(0,245,255,0.55);
+}
+button:hover { transform: scale(1.06); }
+
+/* GAME */
+#gameScreen {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: block;
+}
+
+video { display: none; }
+
+#camCanvas {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 240px;
+  height: 180px;
+  border-radius: 14px;
+  border: 2px solid rgba(255,255,255,0.35);
+  box-shadow: 0 0 30px rgba(0,255,255,0.15);
+  z-index: 5;
+}
+
+#gameCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hud {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: right;
+  z-index: 10;
+  font-family: "Orbitron", sans-serif;
+  opacity: 0.95;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROVE Plane Shooter</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- START -->
+  <section id="startScreen" class="screen">
+    <div class="card">
+      <h1 class="title">ROVE</h1>
+      <p class="desc">
+        Move finger → control plane ✈️<br>
+        Pinch → shoot 🔥<br>
+        Close fist → boost 🚀
+      </p>
+      <button id="startBtn">START</button>
+      <p class="small">Allow camera permission</p>
+    </div>
+  </section>
+
+  <!-- GAME -->
+  <section id="gameScreen" class="screen hidden">
+    <canvas id="camCanvas"></canvas>
+    <canvas id="gameCanvas"></canvas>
+
+    <div class="hud">
+      <span id="scoreText">Score: 0</span>
+      <span id="hpText">HP: 100</span>
+      <span id="statusText">Loading...</span>
+    </div>
+
+    <video id="video" autoplay playsinline></video>
+  </section>
+
+  <!-- GAME OVER -->
+  <section id="gameOverScreen" class="screen hidden">
+    <div class="card">
+      <h1 class="title" style="font-size: 46px;">GAME OVER</h1>
+      <p class="desc" id="finalStats"></p>
+      <button id="restartBtn">RESTART</button>
+    </div>
+  </section>
+
+  <!-- MediaPipe -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+
+  <script src="roveScript.js"></script>
+</body>
+</html>
